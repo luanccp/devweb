@@ -1,0 +1,14 @@
+{
+	"users": {
+		"123": {
+			"name": "Luan",
+			"age": 27,
+			"message": "HELLOOO"
+        },
+        "1234": {
+			"name": "Luan",
+			"age": 27,
+			"message": "HELLOOO firebassee"
+		}
+    }
+}

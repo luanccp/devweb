@@ -6,11 +6,18 @@
 	<title>Homepage</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 	<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
 </head>
 <body>
 	<h1>Welcome to the main page</h1>
 	<button onclick="mainApp.logOut()">LogOut</button>
+
+	<h1>CRUD operations</h1>
+	<button onclick="mainApp.Create()">Create</button>
+	<button onclick="mainApp.Read()">Read</button>
+	<button onclick="mainApp.Update()">Update</button>
+	<button onclick="mainApp.Delete()">Delete</button>
 	<script src='firebase.js'></script>
 	<script src='main.js'></script>
 </body>

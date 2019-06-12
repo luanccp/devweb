@@ -16,4 +16,31 @@ var app_firebase = {};
  firebase.initializeApp(firebaseConfig);
 
  app_firebase = firebase;
-})()
+
+ function fnCreate(path, body, callBack) {
+   if(!path || !body) return;
+   app_firebase.database().ref(path).set(body, callBack);
+ }
+
+  function fnRead(path, succsessFunction, errorFunction) {
+    if(!path || !succsessFunction || !errorFunction) return;
+    app_firebase.database().ref(path).once('value').then(succsessFunction, errorFunction);
+  }
+
+ function fnUpdate(path, body, callBack) {
+  if(!path || !body) return;
+  app_firebase.database().ref(path).update(body), callBack;
+}
+
+function fnDelete(path, callBack) {
+  if(!path) return;
+  app_firebase.database().ref(path).remove(callBack);
+}
+
+ app_firebase.databaseApi ={
+   create : fnCreate,
+   read   : fnRead,
+   update : fnUpdate,
+   delete : fnDelete
+ }
+})();

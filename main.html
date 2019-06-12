@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form until complete</title>
+</head>
+<body>
+	<form class="" name="contactform" method="post" action="https://lp.outit.co.il/LA-FACE/send_form_email.php">
+		<input  placeholder="Your Name*"  type="text" name="name" maxlength="50">
+		<input placeholder="Phone *"   type="text" name="telephone" maxlength="30">                    
+		<input placeholder="Email *"   type="email" name="email" maxlength="80">
+		<input class="send" id="register" type="submit" value="Send" disabled="disabled">
+
+		<p>* = Requierd fields</p>
+
+	</form>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			$('form > input').keyup(function() {
+
+				var empty1 = false;
+				$('form > input').each(function() {
+					if ($(this).val() == '') {
+						empty1 = true;
+					}
+				});
+
+				if (empty1) {
+					$('#register').attr('disabled', 'disabled');
+				} else {
+
+					$('#register').prop("disabled", false);
+				}
+			});
+		});
+	</script>
+</body>
+</html>

@@ -4,7 +4,6 @@ var mainApp = {};
 	var firebase = app_firebase;
 	var uid = null;
 
-
 	firebase.auth().onAuthStateChanged(function(user) {
 		if (user) {
 			// User is signed in.
@@ -68,6 +67,5 @@ var mainApp = {};
 	mainApp.Read = fnRead;
 	mainApp.Update = fnUpdate;
 	mainApp.Delete = fnDelete;
-
-		mainApp.logOut = logOut;
+	mainApp.logOut = logOut;
 })();
